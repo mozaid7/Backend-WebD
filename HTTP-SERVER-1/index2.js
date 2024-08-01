@@ -76,7 +76,7 @@ function isThereAtleastOneUnhealthyKidney() {
 }
 
 app.get("/files/:fileName", function (req, res) {
-    const name = req.params.fileName; //any paramete after localhost:3000/files/ x y z will be redirected here
+    const name = req.params.fileName; //any parameter after localhost:3000/files/ x y z will be redirected here
     // and we can get that filename using this
   });
 
