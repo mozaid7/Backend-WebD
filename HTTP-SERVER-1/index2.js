@@ -6,7 +6,7 @@ app.use(express.json());
 
 // Creating multiple functionalities for different requests.
 const users = [{
-    name: "Zaid",
+    name: "John",
     kidneys: [{
         healthy: false
     }]
@@ -36,6 +36,28 @@ app.post('/', function(req, res) {
     res.json ({
         msg: "Done!"
     }) 
+})
+
+app.put("/", function(req, res){
+    for (let i=0; i<users[0].kidneys.length; i++){
+        users[0].kidneys[i].healthy = true;
+    }
+    res.json({});
+})
+
+app.delete("/", function(req, res){
+    const newKidneys = [];
+    for (let i=0; i<users[0].kidneys.length; i++){
+        if (users[0].kidneys[i].healthy) {
+            newKidneys.push({
+                healthy: true
+            })
+        }
+    }
+    users[0].kidneys = newKidneys;
+    res.json({
+        msg: "Done!"
+    })
 })
 
 app.listen(port)
