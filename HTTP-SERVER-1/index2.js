@@ -1,10 +1,11 @@
 const express = require('express');
 const port = 3000
 const app = express();
+app.use(express.json());
 
 
 // Creating multiple functionalities for different requests.
-const user = [{
+const users = [{
     name: "Zaid",
     kidneys: [{
         healthy: false
@@ -12,7 +13,7 @@ const user = [{
 }]; 
 
 app.get('/', function(req, res) {
-    const johnKidneys = user[0].kidneys;
+    const johnKidneys = users[0].kidneys;
     const numberOfKidneys = johnKidneys.length;
     let numberOfHealthyKidneys = 0;
     for (let i=0; i<johnKidneys.length; i++) {
@@ -24,6 +25,17 @@ app.get('/', function(req, res) {
     res.json ({
         numberOfKidneys, numberOfHealthyKidneys, numberOfUnhealthyKidneys
     })
+})
+
+// for sending the data in POST request, you send the data in the BODY
+app.post('/', function(req, res) {
+    const isHealthy = req.body.isHealthy;
+    users[0].kidneys.push({
+        healthy: isHealthy
+    })
+    res.json ({
+        msg: "Done!"
+    }) 
 })
 
 app.listen(port)
