@@ -8,21 +8,28 @@ app.get('/', function(req, res) {
     res.send('Hello World!')
 })
 
-// middlewares
-app.use(bodyParser.json());
+
+// Logic Creation on HTTP server created 
+// For providing a parameter during a server request, use ?n=3 or anything else
+function sum(n) {
+    let ans = 0;
+    for (let i = 1; i<=n; i++){
+        ans = ans + 1;
+    }
+    return ans;
+}
+app.get('/', function(req, res) {
+    const n = req.query.n;
+    const ans = sum(n);
+    res.send("Hi your ans is" + ans);
+})
+
+ 
 
 // app.post('/', function(req, res) {
 //     console.log(req.body)
 //     res.send('Hello World!')
-// })
-
-// app.post('/backend-api/conversation', function(req, res) {
-//     const message = req.query.message;
-//     console.log(message)
-//     res.json({
-//         output: "2 + 2 = 4"
-//     })
-// })
+// }) 
 
 // app.get("/zaid-handler", function (req, res) {
 //     res.json({
@@ -30,5 +37,15 @@ app.use(bodyParser.json());
 //         age: 20,
 //    });
 //  });
+
+// middlewares
+app.use(bodyParser.json());
+// app.post('/backend-api/conversation', function(req, res) {
+//     const message = req.query.message;
+//     console.log(message)
+//     res.json({
+//         output: "2 + 2 = 4"
+//     })
+// })
 
 app.listen(port)
