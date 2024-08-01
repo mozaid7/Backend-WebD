@@ -1,12 +1,12 @@
 const express = require('express');
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 
 const port = 3000
 const app = express();
 
-app.get('/', function(req, res) {
-    res.send('Hello World!')
-})
+// app.get('/', function(req, res) {
+//     res.send('Hello World!')
+// })
 
 
 // Logic Creation on HTTP server created 
@@ -14,14 +14,14 @@ app.get('/', function(req, res) {
 function sum(n) {
     let ans = 0;
     for (let i = 1; i<=n; i++){
-        ans = ans + 1;
+        ans = ans + i;
     }
     return ans;
 }
-app.get('/', function(req, res) {
+app.get("/", function(req, res) {
     const n = req.query.n;
     const ans = sum(n);
-    res.send("Hi your ans is" + ans);
+    res.send("Hi your ans is " + ans);
 })
 
  
@@ -39,7 +39,7 @@ app.get('/', function(req, res) {
 //  });
 
 // middlewares
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 // app.post('/backend-api/conversation', function(req, res) {
 //     const message = req.query.message;
 //     console.log(message)
