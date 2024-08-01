@@ -81,3 +81,9 @@ app.get("/files/:fileName", function (req, res) {
   });
 
 app.listen(port)
+
+// Map function takes input from the user array and maps the input through a transformation function and provides the results.
+// Map Synatx => const ans = arr.map(evenNumbers) >> this will take values from the "arr" array and process them with the "evenNumbers" function.
+
+// Filter function is same as Map function but it just returns the values which are True. 
+// Filter Syntax => const ans = arr.filter(oddNumbers) >> filter func will print only the true values i.e. the odd values only.
