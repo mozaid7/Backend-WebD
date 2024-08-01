@@ -1,3 +1,5 @@
+// How to create a simple HTTP server and how to create different requests like GET, POST, PUT, DELETE, etc.
+
 const express = require('express');
 //const bodyParser = require("body-parser");
 
