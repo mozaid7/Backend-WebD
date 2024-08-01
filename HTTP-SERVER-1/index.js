@@ -33,7 +33,7 @@ const app = express();
 
 app.get('/', function(req, res) {
     const johnKidneys = user[0].kidneys;
-    const numberOfKidneys = kidneys.length;
+    const numberOfKidneys = johnKidneys.length;
     let numberOfHealthyKidneys = 0;
     for (let i=0; i<johnKidneys.length; i++) {
         if (johnKidneys[i].healthy) {
