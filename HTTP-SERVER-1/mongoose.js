@@ -23,11 +23,11 @@ mongoose.connect(
 //   }
 // });
 
-// const User = mongoose.model("Users", {
-//   name: String,
-//   email: String,
-//   password: String,
-// });
+const User = mongoose.model("Users", {
+  name: String,
+  email: String,
+  password: String,
+});
 
 const user = new User({ name: "b", email: "bcd@123", password: "bcd" });
 user.save();
