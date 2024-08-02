@@ -21,3 +21,5 @@ app.get("/health-checkup", function(req, res) {
     msg: "your kidney is fine!"
    })
 });
+
+app.listen(3000);
