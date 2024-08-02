@@ -11,9 +11,9 @@ const User = mongoose.model("Users", {
   });
 
   const user = new User ({ 
-    name: "Mohammed Zaid", 
-    email: "mzee98@gmail.com", 
-    password: '123456' 
+    name: "Mohammed Kaif", 
+    email: "kaifee8@gmail.com", 
+    password: '12223456' 
   });
 
  user.save();
