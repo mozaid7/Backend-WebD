@@ -1,3 +1,5 @@
+// Checking a user before adding in the database
+
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
