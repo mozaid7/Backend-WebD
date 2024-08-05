@@ -1,3 +1,5 @@
+// Authentication using JWT methods
+
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const jwtPassword = "123456";
