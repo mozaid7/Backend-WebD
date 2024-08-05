@@ -30,6 +30,7 @@ app.post("/signup", async function (req, res) {
     email: username, 
     password: password 
   });
+
   
  user.save();
  res.json ({
